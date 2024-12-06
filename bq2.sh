@@ -1,14 +1,13 @@
 #!/bin/bash
 
-echo ""
 echo "Establishing Connection Between Cloud Spanner and BigQuery"
 
-# Prompt user to input required values
-read -p "Enter your Cloud Spanner Instance ID: " SPANNER_INSTANCE
-read -p "Enter your Spanner Database Name: " SPANNER_DATABASE
-read -p "Enter your Spanner Table Name: " SPANNER_TABLE
-read -p "Enter your BigQuery Dataset Name: " BIGQUERY_DATASET
-read -p "Enter your BigQuery View Name (e.g., order_history): " BIGQUERY_VIEW
+# Predefined values
+SPANNER_INSTANCE="ecommerce-instance"  # Replace with the actual Cloud Spanner instance name if different
+SPANNER_DATABASE="ecommerce"          # Pre-created Spanner database
+SPANNER_TABLE="orders"                # Table in Spanner database
+BIGQUERY_DATASET="ecommerce"          # Pre-created BigQuery dataset
+BIGQUERY_VIEW="order_history"         # View name in BigQuery
 
 echo "Creating BigQuery connection to Cloud Spanner..."
 
